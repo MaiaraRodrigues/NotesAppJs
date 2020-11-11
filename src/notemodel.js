@@ -10,4 +10,3 @@ class Note {
 
 }
 
-hello this is new 
