@@ -1,16 +1,9 @@
 'use strict';
 
-(function(exports){
-  var noteList = new NoteList();
-  var note = {
-    content: 'test string',
-    getContent: () => { return this.content }
-  };
-  
-
+(function(){
 
   function hasEmptyArray() {
-    var noteList = new NoteList;
+    var noteList = new NoteList();
  
     assert.isTrue(noteList.listOfNotes.length === 0);
     console.log("Test for empty array")
@@ -19,7 +12,7 @@
 
 
   function canAddNotes() {
-    let noteList = new NoteList;
+    let noteList = new NoteList();
     noteList.addNote("Hello world");
 
     assert.isTrue(noteList.listOfNotes.length === 1);
@@ -38,4 +31,4 @@
   }
 
   returnAllNotes();
-})(this);
+})();
