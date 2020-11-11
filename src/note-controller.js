@@ -1,6 +1,21 @@
+class NoteController{
+  constructor(noteList){
 
-var element = document.getElementById('app');
-console.log(element);
-element.innerHTML = "howdy";
-console.log(element);
-console.log("Tim");
+    this.noteList = new NoteList();
+    this.noteList.addNote("Favourite drink: seltzer");
+    this.noteListView = new NoteListViewer(noteList);
+
+  }
+
+  getsHtml(){
+
+    var element = document.getElementById('app');
+    element.innerHTML = this.noteListView.htmlList(this.noteList);
+
+  }
+}
+let myNoteController = new NoteController();
+myNoteController.getsHtml();
+
+
+
