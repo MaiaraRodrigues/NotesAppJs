@@ -1,0 +1,6 @@
+
+var element = document.getElementById('app');
+console.log(element);
+element.innerHTML = "howdy";
+console.log(element);
+console.log("Tim");
