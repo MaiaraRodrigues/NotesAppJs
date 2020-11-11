@@ -8,10 +8,10 @@
 
     myNoteList.addNote("What a nice day!");
 
-    assert.isTrue(myNoteListViewer.htmlList(myNoteList)) === "<ul><li><div>What a nice day!</div></li></ul>"
+    assert.isTrue(myNoteListViewer.htmlList()) === "<ul><li><div>What a nice day!</div></li></ul>"
 
 
-
+    console.log("testingTheHtmlList")
   }
 
   testingTheHtmlList();
