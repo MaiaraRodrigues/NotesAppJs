@@ -8,11 +8,16 @@ class NoteController{
   }
 
   getsHtml(){
-
+    
+    
     var element = document.getElementById('app');
+    console.log(this.noteListView.htmlList());
+    console.log(this.noteListView);
     element.innerHTML = this.noteListView.htmlList();
-
+    
+    
   }
 }
 let myNoteController = new NoteController();
 myNoteController.getsHtml();
+console.log()
