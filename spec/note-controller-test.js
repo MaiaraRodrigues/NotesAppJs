@@ -21,11 +21,20 @@
   }
 
   function canAddNoteIDToURL() {
-    link = document.getElementsByTagName('a').click()
+    document.getElementById('0').click()
     assert.isTrue(window.location.hash === '#notes/0')
+  }
+
+  function canChangePageContent(){
+    document.getElementById('0').click()
+    console.log(document.getElementById('0'));
+    console.log(document.getElementById('app'));
+    assert.isTrue(document.getElementById('app').innerHTML === "<div>Favourite drink: seltzer</div>");
+
   }
 
   canChangeHtml();
   canAddNoteIDToURL();
+  canChangePageContent();
 
 })();
