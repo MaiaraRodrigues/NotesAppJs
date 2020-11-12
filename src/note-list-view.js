@@ -5,7 +5,7 @@ class NoteListViewer {
   };
 
   htmlList() {
-    let body = this.noteList.viewNotes().map(note => `<li><div>${note.text}</div></li>`).join('');
+    let body = this.noteList.viewNotes().map(note => `<li><div>${note.text.slice(0,20)}</div></li>`).join('');
 
     let openTag = '<ul>';
     let closeTag = '</ul>';

@@ -16,7 +16,7 @@
   function canChangeHtml(){
     
 
-    assert.isTrue(document.getElementById('app').innerHTML === '<ul><li><div>Favourite drink: seltzer</div></li></ul>');
+    assert.isTrue(document.getElementById('app').innerHTML === '<ul><li><div>Favourite drink: sel</div></li></ul>');
 
   }
 
