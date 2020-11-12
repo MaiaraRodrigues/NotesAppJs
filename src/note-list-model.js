@@ -4,7 +4,8 @@ class NoteList {
   }
 
   addNote(text) {
-    let note = new Note(text);
+    let noteID = this.listOfNotes.length
+    let note = new Note(text, noteID);
     this.listOfNotes.push(note);
   }
 
@@ -13,4 +14,3 @@ class NoteList {
   }
 
 }
-

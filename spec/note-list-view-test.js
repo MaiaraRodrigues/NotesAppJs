@@ -10,9 +10,6 @@
     myNoteList.addNote("12345678901234567890123");
 
     assert.isTrue(myNoteListViewer.htmlList() === "<ul><li><div>What a nice day!</div></li><li><div>12345678901234567890</div></li></ul>");
-
-
-    console.log("testingTheHtmlList")
   }
 
   testingTheHtmlList();
