@@ -32,8 +32,17 @@ function showNote(id) {
   document.getElementById("app").innerHTML = `<div>${noteContent}</div>`;
 }
 
+function logSubmitEvents(){
+  document.querySelector('#text').addEventListener("submit", function(event){
+  event.preventDefault();
+  console.log(event);
+  console.log(document.querySelector("#newNote").value);
+  });
+
+}
 
 
 let insertNote = new NoteController;
 insertNote.insertHtml();
 makeUrlChange();
+logSubmitEvents();
