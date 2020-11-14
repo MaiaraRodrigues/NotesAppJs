@@ -6,7 +6,6 @@ class NoteListViewer {
 
   htmlList() {
     let body = this.noteList.viewNotes().map(note => `<li><div><a id='${note.id}' href='#notes/${note.id}'>${note.text.slice(0,20)}</a></div></li>`).join('');
-
     let openTag = '<ul>';
     let closeTag = '</ul>';
 
@@ -14,3 +13,4 @@ class NoteListViewer {
   };
 
 };
+console.log("3")

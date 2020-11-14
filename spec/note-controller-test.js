@@ -13,12 +13,12 @@
   canBeInstantiated();
 
 
-  function canChangeHtml(){
-
-    console.log(document.getElementById('app').innerHTML)
-    assert.isTrue(document.getElementById('app').innerHTML === '<ul><li><div><a id="0" href="#notes/0">Favourite drink: sel</a></div></li></ul>');
-
-  }
+  // function canChangeHtml(){
+  //   testAppDiv = document.getElementById('app');
+  //   controller.getsHtml();
+  //   assert.isTrue(testAppDiv.innerHTML === '<ul><li><div><a id="0" href="#notes/0">Favorite drink: selt</a></div></li></ul>');
+// 
+  // }
 
   function canAddNoteIDToURL() {
     document.getElementById('0').click()
@@ -26,14 +26,17 @@
   }
 
   function canChangePageContent(){
-    document.getElementById('0').click()
-    console.log(document.getElementById('0'));
-    console.log(document.getElementById('app'));
-    assert.isTrue(document.getElementById('app').innerHTML === "<div>Favourite drink: seltzer</div>");
+    let link = document.getElementById('0')
+    console.log(document.getElementById('app').innerHTML)
+    link.click()
 
-  }
+    console.log(document.getElementById('app').innerHTML)
+    setTimeout(function() { assert.isTrue(document.getElementById('app').innerHTML === '<div>Favorite drink: seltzer</div>') }, 1000)
+    // console.log("Test passed: App div updated");
 
-  canChangeHtml();
+    }
+
+  // canChangeHtml();
   canAddNoteIDToURL();
   canChangePageContent();
 

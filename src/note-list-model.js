@@ -1,12 +1,14 @@
 class NoteList {
   constructor() {
     this.listOfNotes = [];
+    this.id = 0;
   }
 
   addNote(text) {
-    let noteID = this.listOfNotes.length
-    let note = new Note(text, noteID);
+    // let id = this.listOfNotes.length
+    let note = new Note(text, this.id);
     this.listOfNotes.push(note);
+    this.id++;
   }
 
   viewNotes() {
@@ -14,4 +16,4 @@ class NoteList {
   }
 
 }
- 
+ console.log("2")

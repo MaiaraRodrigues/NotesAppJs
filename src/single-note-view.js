@@ -7,3 +7,6 @@ class SingleNoteView{
     return `<div>${this.note.text}</div>`;
   };
 };
+
+console.log("5")
+
