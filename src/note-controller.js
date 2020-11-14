@@ -28,9 +28,7 @@ function getNoteFromUrl() {
 }
 
 function showNote(id) {
-  
   let noteContent = insertNote.noteList.view()[id].viewNote();
-  console.log(noteContent)
   document.getElementById("app").innerHTML = `<div>${noteContent}</div>`;
 }
 

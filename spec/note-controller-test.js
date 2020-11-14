@@ -12,7 +12,6 @@
   function canChangeInnerHtml() {
    let appDiv = document.getElementById("app");
     noteController.insertHtml();
-    console.log(appDiv.innerHTML);
     assert.isTrue(appDiv.innerHTML === '<ul><li><div><a id="0" href="#note/0">Favourite drink: sel</a></div></li><li><div><a id="1" href="#note/1">Hello World</a></div></li></ul>');
     console.log("Test passed: NoteController can updated the innerHTML of the app element")
   }
@@ -32,7 +31,6 @@ canChangeInnerHtml();
     let link2 = document.getElementById('1')
     link.click()
     link2.click()
-    console.log(document.getElementById("app").innerHTML);
     setTimeout(function() { assert.isTrue(document.getElementById("app").innerHTML === "<div>Hello World</div>") }, 1000)
     console.log("Test passed: App div updated!")
   }
