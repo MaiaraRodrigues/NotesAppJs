@@ -1,16 +1,14 @@
-class NoteListViewer {
+'use strict';
+class NoteListView {
+  constructor(notes) {
+    this.notes = notes;
+  }
 
-  constructor(noteList) {
-    this.noteList = noteList;
-  };
-
-  htmlList() {
-    let body = this.noteList.viewNotes().map(note => `<li><div><a id='${note.id}' href='#notes/${note.id}'>${note.text.slice(0,20)}</a></div></li>`).join('');
-    let openTag = '<ul>';
-    let closeTag = '</ul>';
-
+  createHtml() {   
+    let body = this.notes.view().map(note => `<li><div><a id="${note.id}" href="#note/${note.id}">${note.text.slice(0, 20)}</a></div></li>`).join("");
+    let openTag = "<ul>";
+    let closeTag = "</ul>";
     return `${openTag}${body}${closeTag}`
-  };
+  }
+}
 
-};
-console.log("3")

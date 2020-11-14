@@ -1,19 +1,18 @@
+'use strict';
+
 class NoteList {
   constructor() {
-    this.listOfNotes = [];
+    this.notes = [];
     this.id = 0;
   }
 
-  addNote(text) {
-    // let id = this.listOfNotes.length
-    let note = new Note(text, this.id);
-    this.listOfNotes.push(note);
-    this.id++;
+  add(str) {
+    let note = new Note(str, this.id);
+    this.notes.push(note);
+    this.id++; 
   }
 
-  viewNotes() {
-    return this.listOfNotes;
+  view() {
+    return this.notes;
   }
-
 }
- console.log("2")

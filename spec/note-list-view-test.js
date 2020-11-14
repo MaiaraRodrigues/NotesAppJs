@@ -1,20 +1,21 @@
 'use strict';
 
-(function () {
+(function() {
+  let note = new NoteList();
+  note.add("Hello world, today is a lovely day");
+  note.add("Ciao mondo");
+  let noteListView = new NoteListView(note);
 
-  function testingTheHtmlList() {
-    var myNoteList = new NoteList();
-    var myNoteListViewer = new NoteListViewer(myNoteList);
-
-    myNoteList.addNote("What a nice day!");
-    myNoteList.addNote("12345678901234567890123");
-    assert.isTrue(myNoteListViewer.htmlList() === `<ul><li><div><a id='0' href='#notes/0'>What a nice day!</a></div></li><li><div><a id='1' href='#notes/1'>12345678901234567890</a></div></li></ul>`);
+  function hasNoteList() {
+    assert.isTrue(noteListView.noteList === note.noteList);
+    console.log("Test passed: NoteListView instantiated with a list of notes");
   }
+  hasNoteList();
 
-  testingTheHtmlList();
+  function hasHtml() {
+    assert.isTrue(noteListView.createHtml() === '<ul><li><div><a id="0" href="#note/0">Hello world, today i</a></div></li><li><div><a id="1" href="#note/1">Ciao mondo</a></div></li></ul>');
+    console.log("Test passed: NoteListView has html")
+  }
+  hasHtml();
+})(this);
 
-
-})();
-
-// class notelistview
-// takes mynotelist in a constructor

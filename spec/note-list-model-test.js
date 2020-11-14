@@ -1,39 +1,33 @@
 'use strict';
 
-(function(){
+(function() {
+  let noteList = new NoteList();
 
-  function hasEmptyArray() {
-    var noteList = new NoteList();
-
-    assert.isTrue(noteList.listOfNotes.length === 0);
-    console.log("Test for empty array")
-  };
-    hasEmptyArray();
-
+  function hasAnEmptyArray() {
+    assert.isTrue(noteList.notes.length === 0);
+    console.log("Test passed: The class is instantiated with an empty array")  
+  }
+  hasAnEmptyArray();
 
   function canAddNotes() {
-    let noteList = new NoteList();
-    noteList.addNote("Hello world");
-
-    assert.isTrue(noteList.listOfNotes.length === 1);
-    console.log("Test for adding note passed")
-  };
+    noteList.add("Hello world")
+    assert.isTrue(noteList.notes.length === 1);
+    console.log("Test passed: Can add notes and store them in the notes array")
+  }
   canAddNotes();
 
-  function canAddNoteID() {
-    let noteList = new NoteList();
-    noteList.addNote("Hello world");
-
-    assert.isTrue(noteList.listOfNotes[0].id === 0);
-  };
-  canAddNoteID();
-
-  function returnAllNotes() {
-    var noteList = new NoteList();
-    noteList.addNote("Hola Mundo!!!");
-
-    assert.isTrue(noteList.viewNotes()[0].text === "Hola Mundo!!!");
+  function canViewNotes() {
+    noteList.add("My dog doesn't listen to me");
+    assert.isTrue(noteList.view()[1].text === "My dog doesn't listen to me");
+    console.log("Test passed: Can view notes stored in the notes array")
   }
+  canViewNotes();
 
-  returnAllNotes();
-})();
+  function notesHaveIds() {
+    assert.isTrue(noteList.view().length === 2);
+    assert.isTrue(noteList.view()[0].id === 0);
+    assert.isTrue(noteList.view()[1].id === 1);
+    console.log("Test passed: Notes have ID's")
+  }
+  notesHaveIds();
+})(this);

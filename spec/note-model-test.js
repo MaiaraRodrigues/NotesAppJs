@@ -1,12 +1,18 @@
-(function(exports) {
-  function testNoteTextIsStored() {
-    note = new Note('JavaScript is my favorite language');
+"use strict";
 
-    if(note.showFullNote() === 'JavaScript is my favorite language') {
-      return console.log('first test for showing note passed');
-  } else {
-      return 'test failed';
-  }
+(function() {
+  let note = new Note("I will get better at Javascript", 0);
+
+  function textIsNotEmptyAndHasID() {
+    assert.isTrue(note.text === "I will get better at Javascript", 0);
+    console.log("Test passed: text is not empty");
   };
-  testNoteTextIsStored();
+  textIsNotEmptyAndHasID();
+
+  function canViewText() {
+    assert.isTrue(note.viewNote() === "I will get better at Javascript");
+    console.log("Test passed: can view text")
+  }
+
+  canViewText();
 })(this);

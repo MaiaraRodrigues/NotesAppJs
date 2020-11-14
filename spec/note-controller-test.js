@@ -1,39 +1,40 @@
-// 'use strict';
+'use strict';
 
-(function(){
-  var controller = new NoteController();
+(function() {
+  let noteController = new NoteController();
 
-  function canBeInstantiated(){
-    assert.isTrue(controller);
+  function canBeInstantiated() {
+    assert.isTrue(noteController instanceof NoteController);
+    console.log("Test passed: NoteController is instantiated")
   }
   canBeInstantiated();
 
-
-  function canChangeHtml(){
-    testAppDiv = document.getElementById('app');
-    controller.getsHtml();
-    assert.isTrue(testAppDiv.innerHTML === '<ul><li><div><a id="0" href="#notes/0">Favorite drink: selt</a></div></li><li><div><a id="1" href="#notes/1">Hey happy saturday</a></div></li></ul>');
-    console.log("Test passed: can change HTML")
+  function canChangeInnerHtml() {
+   let appDiv = document.getElementById("app");
+    noteController.insertHtml();
+    console.log(appDiv.innerHTML);
+    assert.isTrue(appDiv.innerHTML === '<ul><li><div><a id="0" href="#note/0">Favourite drink: sel</a></div></li><li><div><a id="1" href="#note/1">Hello World</a></div></li></ul>');
+    console.log("Test passed: NoteController can updated the innerHTML of the app element")
   }
+canChangeInnerHtml();
 
-  function canAddNoteIDToURL() {
+  function canListenForHashChanged() {
     let link = document.getElementById('0')
+    let link2 = document.getElementById('1')
     link.click()
-    assert.isTrue(window.location.hash === '#notes/0')
-    console.log("Test passed: can add note ID to url")
+    link2.click()
+    assert.isTrue(window.location.hash === '#note/1')
   }
+  canListenForHashChanged();
 
-  function canChangePageContent(){
-    let link = document.getElementById('0');
-    let link2 = document.getElementById('1');
-    link.click();
-    link2.click();
-    setTimeout(function() { assert.isTrue(document.getElementById('app').innerHTML === '<div>Hey happy saturday</div>') }, 1000);
-    console.log("Test passed: App div updated");
+  function canUpdateContent() {
+    let link = document.getElementById('0')
+    let link2 = document.getElementById('1')
+    link.click()
+    link2.click()
+    console.log(document.getElementById("app").innerHTML);
+    setTimeout(function() { assert.isTrue(document.getElementById("app").innerHTML === "<div>Hello World</div>") }, 1000)
+    console.log("Test passed: App div updated!")
   }
-
-  canChangeHtml();
-  canAddNoteIDToURL();
-  canChangePageContent();
-
+  canUpdateContent();
 })();

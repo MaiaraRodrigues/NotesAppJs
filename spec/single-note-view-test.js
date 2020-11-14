@@ -1,18 +1,16 @@
+'use strict';
 (function() {
+  let note = new Note("Hello world");
+  let singleNoteView = new SingleNoteView(note);
 
-  var note = new Note('SingleNoteView test');
-  var snv = new SingleNoteView(note);
+  function canBeInstantiated() {
+    assert.isTrue(singleNoteView instanceof SingleNoteView);
+    console.log("Test passed: A SingleNoteView can be instantiated")
+  }
+  canBeInstantiated(); 
 
-  function canBeInstantiated(){
-    assert.isTrue(snv);
-  };
-
-  canBeInstantiated();
-
-  function returnNoteHTML(){
-    assert.isTrue(snv.createHTML() === '<div>SingleNoteView test</div>');
-  };
-
-  returnNoteHTML();
-
+  function canReturnHtml() {
+    assert.isTrue(singleNoteView.makeHtml() === "<div>Hello world</div>");
+  }
+  canReturnHtml();
 })();

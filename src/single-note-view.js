@@ -1,12 +1,10 @@
-class SingleNoteView{
-  constructor(note){
+'use strict';
+class SingleNoteView {
+  constructor(note) {
     this.note = note;
   }
 
-  createHTML(){
+  makeHtml() {
     return `<div>${this.note.text}</div>`;
-  };
-};
-
-console.log("5")
-
+  }
+}
